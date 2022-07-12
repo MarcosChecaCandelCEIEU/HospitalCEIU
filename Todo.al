@@ -303,3 +303,66 @@ table 50102 Dietas
     end;
 
 }
+
+page 50126 Especialidad
+{
+    Caption = 'Especialidad';
+    PageType = List;
+    ApplicationArea = All;
+    UsageCategory = Administration;
+    SourceTable = Especialidad;
+
+    layout
+    {
+        area(Content)
+        {
+            group(GroupName)
+            {
+                field(Codigo; rec.Codigo)
+                {
+                    ApplicationArea = All;
+
+                }
+                field(Nombre; Rec.Nombre)
+                {
+                    ApplicationArea = All;
+                }
+            }
+        }
+    }
+}
+
+page 50125 Habitacion
+{
+    Caption = 'Habitacion';
+    PageType = List;
+    UsageCategory = Lists;
+    ApplicationArea = All;
+    SourceTable = Habitacion;
+
+    layout
+    {
+        area(Content)
+        {
+            repeater(Group)
+            {
+                field("No."; Rec."No.")
+                {
+                    ApplicationArea = All;
+                }
+                field(Planta; Rec.Planta)
+                {
+                    ApplicationArea = All;
+                }
+                field("No. Camas"; Rec."No. Camas")
+                {
+                    ApplicationArea = All;
+                }
+                field("Camas disponibles"; Rec."Camas disponibles")
+                {
+                    ApplicationArea = All;
+                }
+            }
+        }
+    }
+}
