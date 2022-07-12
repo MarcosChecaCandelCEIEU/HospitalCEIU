@@ -281,7 +281,7 @@ table 50102 Dietas
 
     var
         myInt: Integer;
-
+    //a
     trigger OnInsert()
     begin
 
