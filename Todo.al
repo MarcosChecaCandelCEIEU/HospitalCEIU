@@ -210,16 +210,21 @@ table 50126 Especialidad
 
     fields
     {
-        field(1; MyField; Integer)
+        field(1; Codigo; Code[10])
         {
             DataClassification = ToBeClassified;
 
+        }
+
+        field(2; Nombre; Text[50])
+        {
+            DataClassification = ToBeClassified;
         }
     }
 
     keys
     {
-        key(Key1; MyField)
+        key(Key1; Codigo)
         {
             Clustered = true;
         }
