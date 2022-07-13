@@ -33,9 +33,10 @@ table 50100 Paciente
             TableRelation = Doctor.CodigoDoctor;
         }
 
-        field(8; Dieta; Code[10])
+        field(8; Dieta; Option)
         {
-            TableRelation = Dietas.Codigo;
+            OptionMembers = Desayuno,Comida,Cena,Nada;
+            OptionCaption = 'Desayuno''Comida''Cena''Nada';
         }
         field(9; Alta; Boolean)
         {
@@ -75,11 +76,10 @@ table 50100 Paciente
 
     trigger OnModify()
     begin
-        if Confirm('¿Estas seguro que quieres modificar la informacion del paciente?') then
-        begin
+        if Confirm('¿Estas seguro que quieres modificar la informacion del paciente?') then begin
             if Alta then
                 FechaSalida := WorkDate();
-            Modify();    
+            Modify();
         end
         else
             exit;
