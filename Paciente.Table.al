@@ -51,7 +51,7 @@ table 50100 Paciente
         }
         field(12; Medicamentos; Boolean)
         {
-            
+
         }
     }
 
@@ -64,7 +64,9 @@ table 50100 Paciente
     }
 
     var
+        recDoc: Record Doctor;
 
+        recHab: Record Habitacion;
 
     trigger OnInsert()
     begin
@@ -82,7 +84,8 @@ table 50100 Paciente
 
     trigger OnDelete()
     begin
-        
+        if not Alta then Error('No se puede eliminar a un paciente si no tiene el alta');
+
     end;
 
     trigger OnRename()
