@@ -22,7 +22,7 @@ table 50100 Paciente
         }
         field(5; Apellido2; Text[20])
         {
-
+            TableRelation = Habitacion."No.";
         }
         field(6; NumeroHabitacion; Code[5])
         {
@@ -30,12 +30,12 @@ table 50100 Paciente
         }
         field(7; Doctor; Code[20])
         {
-
+            TableRelation = Doctor.CodigoDoctor;
         }
 
         field(8; Dieta; Code[10])
         {
-
+            TableRelation = Dietas.Codigo;
         }
         field(9; Alta; Boolean)
         {
@@ -51,7 +51,7 @@ table 50100 Paciente
         }
         field(12; Medicamentos; Boolean)
         {
-
+            
         }
     }
 
@@ -73,12 +73,16 @@ table 50100 Paciente
 
     trigger OnModify()
     begin
+        if Confirm('¿Estas seguro que quieres modificar la informacion del paciente?') then
+            Modify()
+        Else
+            exit;
 
     end;
 
     trigger OnDelete()
     begin
-
+        
     end;
 
     trigger OnRename()

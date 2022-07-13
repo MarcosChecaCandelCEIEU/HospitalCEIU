@@ -45,8 +45,8 @@ table 50125 Habitacion
 
     trigger OnDelete()
     begin
-        recPaciente.SetRange(recPaciente.NumeroHabitacion, Rec."No.");
-        if recPaciente.FINDFIRST then
+        Rec.SetRange("No.", recPaciente.NumeroHabitacion);
+        if rec.FINDFIRST then
             Error('No se puede borrar la habitacion si esta relacionada a un paciente');
     end;
 
