@@ -22,11 +22,11 @@ table 50100 Paciente
         }
         field(5; Apellido2; Text[20])
         {
-            TableRelation = Habitacion."No.";
+            
         }
         field(6; NumeroHabitacion; Code[5])
         {
-
+            TableRelation = Habitacion."No.";
         }
         field(7; Doctor; Code[20])
         {
@@ -35,12 +35,13 @@ table 50100 Paciente
 
         field(8; Dieta; Option)
         {
+            InitValue = Nada;
             OptionMembers = Desayuno,Comida,Cena,Nada;
             OptionCaption = 'Desayuno''Comida''Cena''Nada';
         }
         field(9; Alta; Boolean)
         {
-
+            InitValue = false;
         }
         field(10; FechaEntrada; Date)
         {
@@ -65,9 +66,6 @@ table 50100 Paciente
     }
 
     var
-        recDoc: Record Doctor;
-
-        recHab: Record Habitacion;
 
     trigger OnInsert()
     begin
