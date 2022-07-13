@@ -4,48 +4,52 @@ table 50100 Paciente
 
     fields
     {
-        field(1; DNI; Code[10])
+        field(1; Codigo; Code[10])
         {
 
         }
-        field(2; Nombre; Text[20])
+        field(2; DNI; Code[9])
         {
 
         }
-        field(3; Apellido1; Text[20])
+        field(3; Nombre; Text[20])
         {
 
         }
-        field(4; Apellido2; Text[20])
+        field(4; Apellido1; Text[20])
         {
 
         }
-        field(5; NumeroHabitacion; Code[5])
+        field(5; Apellido2; Text[20])
         {
 
         }
-        field(6; Doctor; Code[20])
+        field(6; NumeroHabitacion; Code[5])
+        {
+
+        }
+        field(7; Doctor; Code[20])
         {
 
         }
 
-        field(7; Dieta; Code[10])
+        field(8; Dieta; Code[10])
         {
 
         }
-        field(8; Alta; Boolean)
+        field(9; Alta; Boolean)
         {
 
         }
-        field(9; FechaEntrada; Date)
+        field(10; FechaEntrada; Date)
         {
 
         }
-        field(10; FechaSalida; Date)
+        field(11; FechaSalida; Date)
         {
 
         }
-        field(11; Medicamentos; Boolean)
+        field(12; Medicamentos; Boolean)
         {
 
         }
@@ -60,7 +64,7 @@ table 50100 Paciente
     }
 
     var
-        myInt: Integer;
+
 
     trigger OnInsert()
     begin
