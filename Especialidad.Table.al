@@ -25,7 +25,7 @@ table 50126 Especialidad
     }
 
     var
-        myInt: Integer;
+        recDoc: Record Doctor;
 
     trigger OnInsert()
     begin
@@ -39,7 +39,9 @@ table 50126 Especialidad
 
     trigger OnDelete()
     begin
-
+        Rec.SetRange(rec.Codigo,recDoc.Especialidad);
+        If Rec.FindFirst() then
+            Error('No se puede borrar el registro mientras este relacionado con otra tabla');
     end;
 
     trigger OnRename()

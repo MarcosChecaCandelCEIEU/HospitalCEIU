@@ -24,7 +24,7 @@ table 50102 Dietas
     }
 
     var
-        myInt: Integer;
+        recPaciente: Record Paciente;
 
     trigger OnInsert()
     begin
@@ -38,8 +38,9 @@ table 50102 Dietas
 
     trigger OnDelete()
     begin
-
-
+        Rec.SetRange(Rec.Codigo,recPaciente.Dieta);
+        If Rec.FindFirst() then
+            Error('No se puede borrar el registro mientras este relacionado con otra tabla');
     end;
 
     trigger OnRename()

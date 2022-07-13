@@ -23,7 +23,7 @@ table 50101 Doctor
         }
         field(5; Especialidad; Code[20])
         {
-
+            TableRelation = Especialidad.Codigo;
         }
 
     }
