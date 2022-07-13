@@ -43,11 +43,11 @@ table 50100 Paciente
         }
         field(10; FechaEntrada; Date)
         {
-
+            Editable = false;
         }
         field(11; FechaSalida; Date)
         {
-
+            Editable = false;
         }
         field(12; Medicamentos; Boolean)
         {
@@ -68,16 +68,19 @@ table 50100 Paciente
 
     trigger OnInsert()
     begin
-
+        FechaEntrada := WorkDate();
     end;
 
     trigger OnModify()
     begin
         if Confirm('¿Estas seguro que quieres modificar la informacion del paciente?') then
-            Modify()
-        Else
+        begin
+            if Alta then
+                FechaSalida := WorkDate();
+            Modify();    
+        end
+        else
             exit;
-
     end;
 
     trigger OnDelete()

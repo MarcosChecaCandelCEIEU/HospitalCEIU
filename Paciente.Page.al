@@ -1,7 +1,7 @@
 page 50100 Paciente
 {
     Caption = 'Paciente';
-    PageType = List;
+    PageType = Card;
     ApplicationArea = All;
     UsageCategory = Administration;
     SourceTable = Paciente;
@@ -14,24 +14,24 @@ page 50100 Paciente
             {
                 field(Codigo; Rec.Codigo)
                 {
-
+                    Editable = false;
 
                 }
                 field(DNI; REC.DNI)
                 {
-
+                    Editable = False;
                 }
                 field(Nombre; Rec.Nombre)
                 {
-
+                    Editable = false;
                 }
                 field(Apellido1; Rec.Apellido1)
                 {
-
+                    Editable = false;
                 }
                 field(Apellido2; Rec.Apellido2)
                 {
-
+                    Editable = false;
                 }
                 field(NumeroHabitacion; Rec.NumeroHabitacion)
                 {
@@ -51,7 +51,7 @@ page 50100 Paciente
                 }
                 field(FechaEntrada; Rec.FechaEntrada)
                 {
-
+                    
                 }
                 field(FechaSalida; Rec.FechaSalida)
                 {
